@@ -23,7 +23,7 @@ function ExpTitle({darkMode}){
             <h2 className={classNames(' display-4 fw-bold lh-1', {'vol-headline' : !darkMode, 'vol-headline-dark': darkMode})}>Experiences</h2>              
           </div>
           <div className="col-lg-4 offset-lg-1 p-0 overflow-hidden ">
-              <img className="rounded-lg-3" src={!darkMode ? "../public/images/linePattern3.png" : "../public/images/linePattern3-white.png"} alt="3D line pattern" width="100%"/>
+              <img className="rounded-lg-3" src={!darkMode ? "../images/linePattern3.png" : "../images/linePattern3-white.png"} alt="3D line pattern" width="100%"/>
           </div>
         </div>
       </div>

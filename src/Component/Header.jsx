@@ -68,7 +68,7 @@ function Header({darkMode , setDarkMode}) {
                     <Fadein>
                       <img
                         className="logo"
-                        src={!darkMode ? "../public/images/logo.svg": "../public/images/logo-dark.svg"}
+                        src={!darkMode ? "../images/logo.svg": "../images/logo-dark.svg"}
                         alt="K logo"
                         width="30"
                         height="24"

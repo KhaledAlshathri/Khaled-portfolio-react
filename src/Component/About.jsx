@@ -15,7 +15,7 @@ function About({darkMode}){
                  <p className={classNames('lead', {'About-content': !darkMode, 'About-content-dark': darkMode})}>I am a passionate software engineer student with an interest in technology and continuous development. I am marked by a commitment and approach to volunteering for various projects. This hands-on experience has significantly contributed to my growth and expertise in multiple areas.</p>
                 </div>
                 <div className="col-lg-4 offset-lg-1 p-0 overflow-hidden ">
-                 <img className="rounded-lg-3" src={!darkMode ? "../public/images/linePattern1.png" : "../public/images/linePattern1-white.png"} alt="3D line pattern" width="100%"/>
+                 <img className="rounded-lg-3" src={!darkMode ? "../images/linePattern1.png" : "../images/linePattern1-white.png"} alt="3D line pattern" width="100%"/>
                 </div>
             
             </div>

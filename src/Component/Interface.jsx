@@ -17,7 +17,7 @@ function Interface({darkMode}){
          
             <div className="main-pic col-lg-6 col-md-5 col-sm-5  col-6 justify-content-center">
               <Fadein>
-              <img src={!darkMode ? "../public/images/khaled.png" : "../public/images/khaled-dark.png"} className="d-block mx-lg-auto col-lg-10 col-md-12 col-sm-12 img-fluid justify-content-center" alt="picture of Khaled Alshathri" width="700" height="500" loading="lazy"/>
+              <img src={!darkMode ? "../images/khaled.png" : "../images/khaled-dark.png"} className="d-block mx-lg-auto col-lg-10 col-md-12 col-sm-12 img-fluid justify-content-center" alt="picture of Khaled Alshathri" width="700" height="500" loading="lazy"/>
               </Fadein>
             </div>
       
