@@ -8,7 +8,6 @@ import "../darktheme.css"
 function Interface({darkMode}){
     return(<section id="link-to-Home">
       <section className="interface">
-      <a id="link-to-Home" style={{ margin: '0%' }}></a>
  
         <div className={classNames(' col-12 px-4 pt-5 ', {'interfaceContainer': !darkMode, 'interfaceContainer-dark': darkMode})} >
         <div className="row flex-lg-row-reverse flex-row-reverse align-items-center g-5 py-5 pb-0 ">
