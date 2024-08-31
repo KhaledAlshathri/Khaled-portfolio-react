@@ -61,6 +61,7 @@ function Header({theme , easterEgg}) {
   };
 
   const handleClickEasterEgg = (egg) => {
+    const audio = new Audio("../sounds/trophy-sounds.mp3");
     if (!foundEasterEggs[egg]) {
       setFoundEasterEggs(prevState => ({ ...prevState, [egg]: true }));
       alert(eggContent);
@@ -69,6 +70,10 @@ function Header({theme , easterEgg}) {
         setEggCounter(2)
       }else if (eggCounter === 2){
         setEggContent("Achievement unlocked. Easter Eggs Finder🏆")
+        setEggCounter(3)
+      }
+      if (eggCounter === 3){
+        audio.play();
       }
     }
   };
