@@ -146,7 +146,7 @@ footer {
   border-radius: 5px;
 }
 
-a {
+.navbar-link {
   position: relative;
   z-index: 10;
   display: block;

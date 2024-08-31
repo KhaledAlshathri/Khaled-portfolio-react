@@ -9,7 +9,7 @@ function ExpTitle({darkMode}){
 
         
         <div >
-          <a id = "link-to-Experience" style={{margin: "0%"}}></a>
+          <a id = "link-to-Experience" className="navbar-link" style={{margin: "0%"}}></a>
           </div>
 
         <Fadein2>

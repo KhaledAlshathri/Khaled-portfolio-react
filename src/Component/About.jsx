@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 function About({darkMode}){
     return(<section id="link-to-About">
-       <a id="link-to-About" style={{ margin: '0%' }}></a>
+       <a id="link-to-About" className="navbar-link" style={{ margin: '0%' }}></a>
       
         <Fadein>
         <div className="container about my-5  col-9">

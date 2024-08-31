@@ -7,9 +7,8 @@ function Footer({darkMode}){
     return(
       <section id="link-to-Contact ">
 
-
+        <a id="link-to-Contact" className="navbar-link" style={{ margin: '0%' }}></a>
         <footer className={classNames('d-flex justify-content-between align-items-center py-sm-3 py-1 my-0 border-top mt-5', {'text-bg-dark': !darkMode, 'footer-dark' : darkMode})}>
-          <a id="link-to-Contact" style={{ margin: '0%' }}></a>
 
         <div className="col-sm-6 col-7  d-flex align-items-center justify-content-">
         <Fadein>

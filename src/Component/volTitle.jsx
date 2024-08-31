@@ -23,7 +23,7 @@ function Voltitle({darkMode}){
   </div>
 </div>
 </Fadein>
-<a id="link-to-Volunteering" style={{ margin: '0%' }}></a>
+<a id="link-to-Volunteering" className="navbar-link" style={{ margin: '0%' }}></a>
 </section>)
 }
 

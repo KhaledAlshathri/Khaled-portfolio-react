@@ -57,7 +57,7 @@ function Header({darkMode , setDarkMode}) {
 
   return (
     <div>
-      <a id="link-to-Home" style={{ margin: "0%" }}></a>
+      <a id="link-to-Home" className="navbar-link" style={{ margin: "0%" }}></a>
       <header className={classNames('py-sm-3 pt-2 pb-0 ', {'text-bg-dark': !darkMode, 'header-dark': darkMode})}>
         <div className="container nav-div col-12 mx-0" style={{maxWidth: "100%"}}>
           <div className="align-items-center justify-content-center justify-content-lg-center">
