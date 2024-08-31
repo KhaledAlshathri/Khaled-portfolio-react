@@ -146,6 +146,14 @@ footer {
   border-radius: 5px;
 }
 
+a {
+  position: relative;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 
 /*   media query   */ 
 
@@ -316,7 +324,7 @@ footer {
   }
 
   li {
-    font-size: 2.175vw;
+    font-size: 2.169vw;
     margin-left: 0px;
     margin-right: 0px;
   }
