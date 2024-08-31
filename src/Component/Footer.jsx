@@ -15,7 +15,7 @@ function Footer({darkMode , easterEgg}){
         setEggContent("Nice! You got the second one! One more left🤩")
         setEggCounter(2)
       }else if (eggCounter === 2){
-        setEggContent("Achievement unlocked. Easter Eggs Founder🏆")
+        setEggContent("Achievement unlocked. Easter Eggs Finder🏆")
       }
     }
   };
