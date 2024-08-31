@@ -3,7 +3,24 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import classNames from "classnames";
 
-function Footer({darkMode}){
+function Footer({darkMode , easterEgg}){
+
+  const {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent} = easterEgg;
+
+  const handleClickEasterEgg = (egg) => {
+    if (!foundEasterEggs[egg]) {
+      setFoundEasterEggs(prevState => ({ ...prevState, [egg]: true }));
+      alert(eggContent);
+      if(eggCounter === 1){
+        setEggContent("Nice! You got the second one! One more left🤩")
+        setEggCounter(2)
+      }else if (eggCounter === 2){
+        setEggContent("Achievement unlocked. Easter Eggs Founder🏆")
+      }
+    }
+  };
+
+
     return(
       <section id="link-to-Contact ">
 
@@ -13,7 +30,7 @@ function Footer({darkMode}){
         <div className="col-sm-6 col-7  d-flex align-items-center justify-content-">
         <Fadein>
           <img className="logo" src={!darkMode ? "../images/logo.svg" : "../images/logo-dark.svg"} alt="K logo"width="30" height="24" style={{marginLeft: "10px", marginBottom: "5px"}}/>
-          <span className="signature mb-0 text-body-light" style={{marginLeft: "15px"}}> Khaled Alshathri; </span>
+          <span className="signature mb-0 text-body-light" style={{marginLeft: "15px"}} onClick={() => handleClickEasterEgg('name')}> Khaled Alshathri; </span>
         </Fadein>
         </div>
 

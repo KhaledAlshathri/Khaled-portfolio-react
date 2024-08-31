@@ -5,7 +5,12 @@ import classNames from "classnames";
 import '../darktheme.css'
 
 
-function Header({darkMode , setDarkMode}) {
+function Header({theme , easterEgg}) {
+
+  const {darkMode , setDarkMode} = theme
+  const {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent} = easterEgg
+
+
   const [activeSection, setActiveSection] = useState("Home");
 
   const sections = ["Home", "About", "Volunteering", "Experience", "Contact"];
@@ -46,12 +51,25 @@ function Header({darkMode , setDarkMode}) {
   }, [activeSection, sections]);
 
   
-  const handleChange = () => {
+  const handleChangeDarkMode = () => {
     setDarkMode(!darkMode);
     if(!darkMode){
       document.body.style.backgroundColor = "#212529"
     } else {
       document.body.style.backgroundColor = "#EDEDED"
+    }
+  };
+
+  const handleClickEasterEgg = (egg) => {
+    if (!foundEasterEggs[egg]) {
+      setFoundEasterEggs(prevState => ({ ...prevState, [egg]: true }));
+      alert(eggContent);
+      if(eggCounter === 1){
+        setEggContent("Nice! You got the second one! One more left🤩")
+        setEggCounter(2)
+      }else if (eggCounter === 2){
+        setEggContent("Achievement unlocked. Easter Eggs Founder🏆")
+      }
     }
   };
 
@@ -72,6 +90,7 @@ function Header({darkMode , setDarkMode}) {
                         alt="K logo"
                         width="30"
                         height="24"
+                        onClick={() => handleClickEasterEgg('icon')}
                       />
                     </Fadein>
                   </div>
@@ -99,7 +118,7 @@ function Header({darkMode , setDarkMode}) {
                 <div className="col-1 dark-theme-div" >
                   <Fadein>
                     <label>
-                      <input type="checkbox" value={darkMode} onChange={handleChange} />
+                      <input type="checkbox" value={darkMode} onChange={handleChangeDarkMode} />
                       <ion-icon name="sunny" class="sun"></ion-icon>
                       <ion-icon name="moon" class="moon"></ion-icon>
                       <span className="toggle"></span>

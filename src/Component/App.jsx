@@ -14,18 +14,30 @@ import {volunteeringList , experienceList } from './cardsLists'
 function App() {
 
   const [darkMode , setDarkMode] = useState(false);
+  const [eggContent , setEggContent] = useState("You got the first Easter Egg! keep looking for the others😉")
+  const [eggCounter , setEggCounter] = useState(1);
+  const [foundEasterEggs, setFoundEasterEggs] = useState({
+    icon: false,
+    name: false,
+    image: false
+  });
+
+  const theme = {darkMode , setDarkMode}
+  const easterEgg = {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent}
+
+
 
 
   return (
     <div>
-        <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Header theme={theme} easterEgg={easterEgg} />
         <Interface darkMode={darkMode}/>
         <About darkMode={darkMode} />
-        <Voltitle darkMode={darkMode} />
+        <Voltitle darkMode={darkMode} easterEgg={easterEgg} />
         {volunteeringList.map(volunteer => craeteVolCard({ ...volunteer, darkMode }))}
         <ExpTitle darkMode={darkMode}/>
         {experienceList.map(experience => craeteExpCard({ ...experience, darkMode }))}
-        <Footer darkMode={darkMode} />
+        <Footer darkMode={darkMode} easterEgg={easterEgg} />
     </div>
   )
 }
