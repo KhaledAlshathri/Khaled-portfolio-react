@@ -88,7 +88,7 @@ function Header({theme , easterEgg}) {
     if (showEasterEggCard) {
       const timer = setTimeout(() => {
         setShowEasterEggCard(false);
-      }, 3000); 
+      }, 5000); 
       return () => clearTimeout(timer);
     }
   }, [showEasterEggCard]);
