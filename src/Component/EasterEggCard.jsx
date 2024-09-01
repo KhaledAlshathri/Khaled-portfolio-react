@@ -24,7 +24,7 @@ function EasterEggCard({ easterEgg }) {
     <div>
       <div className="easter-egg-card">
         <audio autoPlay>
-          <source src="../sounds/trophy-sound.mp3" type="audio/mpeg" />
+          <source src="../sounds/trophy-sound.mp3" />
         </audio>
 
         {eggContent}
