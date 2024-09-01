@@ -1,29 +1,45 @@
-import React from "react";
+import React, {useState , useEffect} from "react";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import classNames from "classnames";
+import EasterEggCard from "./EasterEggCard"
 
 function Voltitle({darkMode , easterEgg}){
 
-  const {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent} = easterEgg;
+  const {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent , showEasterEggCard , setShowEasterEggCard, num, setNum} = easterEgg;
 
   const handleClickEasterEgg = (egg) => {
-    const audio = new Audio("../sounds/trophy-sound.mp3");
+
     if (!foundEasterEggs[egg]) {
       setFoundEasterEggs(prevState => ({ ...prevState, [egg]: true }));
-      alert(eggContent);
-      if(eggCounter === 1){
-        setEggContent("Nice! You got the second one! One more left🤩")
-        setEggCounter(2)
-      }else if (eggCounter === 2){
-        setEggContent("Achievement unlocked. Easter Eggs Finder🏆")
-        setEggCounter(3)
+      
+      if(eggCounter === 0){
+        setShowEasterEggCard(true);
+        setEggCounter(1)
+      } else if (eggCounter === 1) {
+        setShowEasterEggCard(true);
+        setEggContent("Nice! You got the second one! One more left");
+        setEggCounter(2);
+      } else if (eggCounter === 2) {
+        setShowEasterEggCard(true);
+        setEggContent("Achievement unlocked. Easter Eggs Finder");
+        setEggCounter(3);
+      } 
+      
+      if (eggCounter === 3) {
+        setShowEasterEggCard(true);
       }
-      if (eggCounter === 3){
-        audio.play();
-      }
-    } 
+    }
   };
+
+  useEffect(() => {
+    if (showEasterEggCard) {
+      const timer = setTimeout(() => {
+        setShowEasterEggCard(false);
+      }, 3000); 
+      return () => clearTimeout(timer);
+    }
+  }, [showEasterEggCard]);
 
     return(<section id="link-to-Volunteering">
 
@@ -40,6 +56,7 @@ function Voltitle({darkMode , easterEgg}){
              </div>
            <div className="col-lg-4 offset-lg-1 p-0 overflow-hidden ">
                <img className="rounded-lg-3" src={!darkMode ? "../images/linePattern2.png" : "../images/linePattern2-white.png"} alt="3D line pattern" width="100%" onClick={() => handleClickEasterEgg('image')} />
+               {showEasterEggCard && (<EasterEggCard easterEgg={{eggContent, num, setNum}} />)}
            </div>
           </div>
         </div>

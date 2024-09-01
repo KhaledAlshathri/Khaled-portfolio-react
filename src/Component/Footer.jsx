@@ -1,29 +1,45 @@
-import React from "react";
+import React , {useState , useEffect} from "react";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import classNames from "classnames";
+import EasterEggCard from "./EasterEggCard"
 
 function Footer({darkMode , easterEgg}){
 
-  const {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent} = easterEgg;
+  const {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent , showEasterEggCard , setShowEasterEggCard, num, setNum} = easterEgg;
 
   const handleClickEasterEgg = (egg) => {
-    const audio = new Audio("../sounds/trophy-sounds.mp3");
+    
     if (!foundEasterEggs[egg]) {
       setFoundEasterEggs(prevState => ({ ...prevState, [egg]: true }));
-      alert(eggContent);
-      if(eggCounter === 1){
-        setEggContent("Nice! You got the second one! One more left🤩")
-        setEggCounter(2)
-      }else if (eggCounter === 2){
-        setEggContent("Achievement unlocked. Easter Eggs Finder🏆")
-        setEggCounter(3)
-      }
-      if (eggCounter === 3){
-        audio.play();
+      
+      if(eggCounter === 0){
+        setShowEasterEggCard(true);
+        setEggCounter(1)
+      } else if (eggCounter === 1) {
+        setShowEasterEggCard(true);
+        setEggContent("Nice! You got the second one! One more left");
+        setEggCounter(2);
+      } else if (eggCounter === 2) {
+        setShowEasterEggCard(true);
+        setEggContent("Achievement unlocked. Easter Eggs Finder");
+        setEggCounter(3);
+      } 
+      
+      if (eggCounter === 3) {
+        setShowEasterEggCard(true);
       }
     }
   };
+
+  useEffect(() => {
+    if (showEasterEggCard) {
+      const timer = setTimeout(() => {
+        setShowEasterEggCard(false);
+      }, 3000); 
+      return () => clearTimeout(timer);
+    }
+  }, [showEasterEggCard]);
 
 
     return(
@@ -36,6 +52,7 @@ function Footer({darkMode , easterEgg}){
         <Fadein>
           <img className="logo" src={!darkMode ? "../images/logo.svg" : "../images/logo-dark.svg"} alt="K logo"width="30" height="24" style={{marginLeft: "10px", marginBottom: "5px"}}/>
           <span className="signature mb-0 text-body-light" style={{marginLeft: "15px"}} onClick={() => handleClickEasterEgg('name')}> Khaled Alshathri; </span>
+          {showEasterEggCard && (<EasterEggCard easterEgg={{eggContent, num, setNum}} />)}
         </Fadein>
         </div>
 

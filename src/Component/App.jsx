@@ -14,8 +14,10 @@ import {volunteeringList , experienceList } from './cardsLists'
 function App() {
 
   const [darkMode , setDarkMode] = useState(false);
-  const [eggContent , setEggContent] = useState("You got the first Easter Egg! keep looking for the others😉")
-  const [eggCounter , setEggCounter] = useState(1);
+  const [eggContent , setEggContent] = useState("You got the first Easter Egg! Dont stop")
+  const [num, setNum] = useState(1);
+  const [eggCounter , setEggCounter] = useState(0);
+  const [showEasterEggCard, setShowEasterEggCard] = useState(false);
   const [foundEasterEggs, setFoundEasterEggs] = useState({
     icon: false,
     name: false,
@@ -23,7 +25,7 @@ function App() {
   });
 
   const theme = {darkMode , setDarkMode}
-  const easterEgg = {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent}
+  const easterEgg = {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent , showEasterEggCard , setShowEasterEggCard, num, setNum}
 
 
 

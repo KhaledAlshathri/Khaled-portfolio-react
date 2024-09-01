@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import classNames from "classnames";
-import '../darktheme.css'
-
+import '../darktheme.css';
+import EasterEggCard from "./EasterEggCard"
 
 function Header({theme , easterEgg}) {
 
   const {darkMode , setDarkMode} = theme
-  const {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent} = easterEgg
+  const {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent , showEasterEggCard , setShowEasterEggCard, num, setNum} = easterEgg
 
 
   const [activeSection, setActiveSection] = useState("Home");
@@ -61,22 +61,37 @@ function Header({theme , easterEgg}) {
   };
 
   const handleClickEasterEgg = (egg) => {
-    const audio = new Audio("../sounds/trophy-sounds.mp3");
+
     if (!foundEasterEggs[egg]) {
       setFoundEasterEggs(prevState => ({ ...prevState, [egg]: true }));
-      alert(eggContent);
-      if(eggCounter === 1){
-        setEggContent("Nice! You got the second one! One more left🤩")
-        setEggCounter(2)
-      }else if (eggCounter === 2){
-        setEggContent("Achievement unlocked. Easter Eggs Finder🏆")
-        setEggCounter(3)
-      }
-      if (eggCounter === 3){
-        audio.play();
+      
+      if(eggCounter === 0){
+        setShowEasterEggCard(true);
+        setEggCounter(1)
+      } else if (eggCounter === 1) {
+        setShowEasterEggCard(true);
+        setEggContent("Nice! You got the second one! One more left");
+        setEggCounter(2);
+      } else if (eggCounter === 2) {
+        setShowEasterEggCard(true);
+        setEggContent("Achievement unlocked. Easter Eggs Finder");
+        setEggCounter(3);
+      } 
+      
+      if (eggCounter === 3) {
+        setShowEasterEggCard(true);
       }
     }
   };
+
+  useEffect(() => {
+    if (showEasterEggCard) {
+      const timer = setTimeout(() => {
+        setShowEasterEggCard(false);
+      }, 3000); 
+      return () => clearTimeout(timer);
+    }
+  }, [showEasterEggCard]);
 
   return (
     <div>
@@ -97,6 +112,7 @@ function Header({theme , easterEgg}) {
                         height="24"
                         onClick={() => handleClickEasterEgg('icon')}
                       />
+                      {showEasterEggCard && (<EasterEggCard easterEgg={{eggContent, num, setNum}} />)}
                     </Fadein>
                   </div>
                 </div>
