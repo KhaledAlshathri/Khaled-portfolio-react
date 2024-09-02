@@ -64,8 +64,8 @@ function Footer({darkMode , easterEgg}){
         <ul className="nav col-md-6 col-sm-6 justify-content-end list-unstyled d-flex">
           <Fadein><li className=" ms-sm-3 ms-2 "><a  href="mailto:khaled_sh3@hotmail.com"><img className="app-icon" src={!darkMode ? "../images/email-logo.png" : "../images/email-logo-dark.png"} alt=""  style={{borderRadius: "15%"}}/> </a> </li></Fadein>
           <Fadein><li className=" ms-sm-3 ms-2"><a  href="https://x.com/khaled1salah"><img className="app-icon" src={!darkMode ? "../images/X-logo.png" : "..//images/X-logo-dark.png"} alt="" /></a></li></Fadein>
-          <Fadein><li className=" ms-sm-3 ms-2"><a  href="https://www.instagram.com/sh3.__i?igsh=MXM1MjJ4cmozaTZ6dA%3D%3D&utm_source=qr"><img className="app-icon" src={!darkMode ? "../images/insta-logo.png" : "../images/insta-logo-dark.png"} alt="" /></a></li></Fadein>
-          <Fadein><li className=" ms-sm-3 ms-2"><a  href="https://snapchat.com/t/XvRhZIoI"><img className="app-icon" src={!darkMode ? "../images/snap-logo.png" : "../images/snap-logo-dark.png"} alt="" /></a></li></Fadein>
+          {/* <Fadein><li className=" ms-sm-3 ms-2"><a  href="https://www.instagram.com/sh3.__i?igsh=MXM1MjJ4cmozaTZ6dA%3D%3D&utm_source=qr"><img className="app-icon" src={!darkMode ? "../images/insta-logo.png" : "../images/insta-logo-dark.png"} alt="" /></a></li></Fadein>
+          <Fadein><li className=" ms-sm-3 ms-2"><a  href="https://snapchat.com/t/XvRhZIoI"><img className="app-icon" src={!darkMode ? "../images/snap-logo.png" : "../images/snap-logo-dark.png"} alt="" /></a></li></Fadein> */}
           <Fadein><li className=" ms-sm-3 ms-2 ml-2 me-sm-5 me-3"><a  href="https://www.linkedin.com/in/khaled-alshathri?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><img className="app-icon" src={!darkMode ? "../images/linkedin-logo.png" : "../images/linkedin-logo-dark.png"} alt="" /></a></li></Fadein>
         </ul>
         
