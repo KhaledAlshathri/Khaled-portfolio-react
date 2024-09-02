@@ -7,13 +7,13 @@ function EasterEggCard({ easterEgg }) {
   useEffect(() => {
      
     if(num === 1){
-        setTrophyType("../images/bronze-trophy.svg");
+        setTrophyType("../images/bronze-trophy.png");
         setNum(2)
     } else if(num === 2) {
-        setTrophyType("../images/silver-trophy.svg");
+        setTrophyType("../images/silver-trophy.png");
         setNum(3)
     } else if(num === 3){
-        setTrophyType("../images/gold-trophy.svg");
+        setTrophyType("../images/gold-trophy.png");
     }
     
   }, []);
