@@ -180,8 +180,7 @@ footer {
 
 /*   media query   */ 
 
-
-@media (min-width: 1200px) {
+@media (min-width: 1500px) {
 
   .pic-title {
     font-size: 2.5vw;
@@ -209,6 +208,40 @@ footer {
     height: 2.6vw;
   }
 
+  .overflow-hidden{
+    max-height: 1200px !important;
+  }
+  
+}
+
+
+@media (max-width: 1500px) and (min-width: 1200px) {
+
+  .pic-title {
+    font-size: 2.5vw;
+  }
+
+  .pic-content{
+    font-size: 1.3rem;
+  }
+
+  .About-Title{
+    font-size: 4vw;
+  }
+
+  li {
+    font-size: 1.1vw;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .app-icon {
+    height: 2.2vw;
+  }
+
+  .trophy{
+    height: 2.6vw;
+  }
   
 }
 
@@ -429,11 +462,12 @@ footer {
     font-size: 1.7vw;
     height: 30px;
     width: 47%;
-    padding-left: 20px;
+    padding: 5px;
+    padding-left: 25px;
   }
 
   .trophy{
-    height: 3vw;
+    height: 4vw;
     padding-left: 4px;
   }
   
