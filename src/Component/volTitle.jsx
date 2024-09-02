@@ -7,10 +7,13 @@ import EasterEggCard from "./EasterEggCard"
 function Voltitle({darkMode , easterEgg}){
 
   const {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent , showEasterEggCard , setShowEasterEggCard, num, setNum} = easterEgg;
+  var audio = new Audio("../sounds/trophy-sound.mp3");
 
   const handleClickEasterEgg = (egg) => {
 
+
     if (!foundEasterEggs[egg]) {
+      audio.play()
       setFoundEasterEggs(prevState => ({ ...prevState, [egg]: true }));
       
       if(eggCounter === 0){

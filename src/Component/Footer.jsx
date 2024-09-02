@@ -8,9 +8,13 @@ function Footer({darkMode , easterEgg}){
 
   const {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent , showEasterEggCard , setShowEasterEggCard, num, setNum} = easterEgg;
 
+  var audio = new Audio("../sounds/trophy-sound.mp3");
+
   const handleClickEasterEgg = (egg) => {
     
+   
     if (!foundEasterEggs[egg]) {
+      audio.play()
       setFoundEasterEggs(prevState => ({ ...prevState, [egg]: true }));
       
       if(eggCounter === 0){
@@ -51,7 +55,7 @@ function Footer({darkMode , easterEgg}){
         <div className="col-sm-6 col-7  d-flex align-items-center justify-content-">
         <Fadein>
           <img className="logo" src={!darkMode ? "../images/logo.svg" : "../images/logo-dark.svg"} alt="K logo"width="30" height="24" style={{marginLeft: "10px", marginBottom: "5px"}}/>
-          <span className="signature mb-0 text-body-light" style={{marginLeft: "15px"}} onClick={() => handleClickEasterEgg('name')}> Khaled Alshathri; </span>
+          <span className="signature mb-0 text-body-light" style={{marginLeft: "15px"}} onClick={() => handleClickEasterEgg('name') }> Khaled Alshathri; </span>
           {showEasterEggCard && (<EasterEggCard easterEgg={{eggContent, num, setNum}} />)}
         </Fadein>
         </div>

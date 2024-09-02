@@ -10,7 +10,7 @@ function Header({theme , easterEgg}) {
   const {darkMode , setDarkMode} = theme
   const {foundEasterEggs , setFoundEasterEggs , eggCounter ,setEggCounter , eggContent , setEggContent , showEasterEggCard , setShowEasterEggCard, num, setNum} = easterEgg
 
-
+  var audio = new Audio("../sounds/trophy-sound.mp3");
   const [activeSection, setActiveSection] = useState("Home");
 
   const sections = ["Home", "About", "Volunteering", "Experience", "Contact"];
@@ -62,7 +62,9 @@ function Header({theme , easterEgg}) {
 
   const handleClickEasterEgg = (egg) => {
 
+
     if (!foundEasterEggs[egg]) {
+      audio.play()
       setFoundEasterEggs(prevState => ({ ...prevState, [egg]: true }));
       
       if(eggCounter === 0){
