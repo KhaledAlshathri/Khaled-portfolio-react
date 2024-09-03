@@ -180,7 +180,3 @@ function Fadein({ children }) {
     </section>
   );
 }
-
-function darkThemeActive(){
-  console.log("checked")
-}
